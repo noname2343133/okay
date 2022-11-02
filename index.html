@@ -1,0 +1,146 @@
+<meta charset="UTF-8" />
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+<div class="container">
+    <div class="main-balance">
+    <span class="balance">0,00 $</span>
+    <span class="main-wallet hint">Основной кошелёк</span>
+    </div>
+    <button class="button" onclick="window.location.href='#'"><i class="fa fa-share"></i><br/>Отправить</button>
+    <button class="button" onclick="window.location.href='#'"><i class="fa fa-plus"></i><br/>Получить</button>
+    <button class="button" onclick="window.location.href='#'"><i class="fa fa-cogs"></i><br/>Настройки</button>
+</div>
+<div class="btc">
+    <img width="40px" height="40px" style="padding-left: 5px;" src="btc.png">
+    <div class="btc-info">
+        <span>Bitcoin</span>
+        <span class="hint wall">20 464,63 $</span>
+    </div>
+    <span class="ok">0 BTC</span>
+</div>
+
+<div class="btc">
+    <img width="40px" height="40px" style="padding-left: 5px;" src="eth.png">
+    <div class="btc-info">
+        <span>Ethereum</span>
+        <span class="hint wall">1 576,52 $</span>
+    </div>
+    <span class="ok">0 ETH</span>
+</div>
+
+<div class="btc">
+    <img width="40px" height="40px" style="padding-left: 5px;" src="ltc.png">
+    <div class="btc-info">
+        <span>Litecoin</span>
+        <span class="hint wall">55,07 $</span>
+    </div>
+    <span class="ok">0     LTC</span>
+</div>
+
+<div class="btc">
+    <img width="40px" height="40px" style="padding-left: 5px;" src="solana.png">
+    <div class="btc-info">
+        <span>Solana</span>
+        <span class="hint wall">32,36 $</span>
+    </div>
+    <span class="ok">0 SOL</span>
+</div>
+<div class="add">
+<span class="hint"><i class="fa fa-sliders"></i> Добавить токен</span>
+</div>
+ </body>
+
+
+<script>
+let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
+
+Telegram.WebApp.onEvent('backButtonClicked', function(){
+	tg.BackButton.hide();
+    window.location.href='https://79.137.198.24/tg/webapp/index.php?id=' + tg.initDataUnsafe.user.id
+});
+</script>
+
+<style>
+body{
+	color: var(--tg-theme-text-color);
+	background: var(--tg-theme-bg-color);
+    font-family: "Roboto",sans-serif;
+    margin: 0;
+    padding: 0;
+    top: 0;
+}
+.hint{
+	color: var(--tg-theme-hint-color);
+}
+.link{
+	color: var(--tg-theme-link-color);
+}
+.container{
+    text-align: center;
+	align-items: center;
+    width: 100%;
+    height: 130px;
+    background-color: #232E3C;
+}
+.main-balance{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.balance{
+    font-size: 30px; 
+    font-weight: bold;
+    color: var(--tg-theme-text-color);
+}
+.button {
+  display: inline-block;
+  background: #4885C5;
+  color: #fff;
+  width: 30%;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  text-decoration: none;
+  line-height: 1;
+  cursor: pointer;
+}
+.btc{
+    display: flex;
+    padding-top: 10px;
+    width: 100%;
+    height: 50px;
+}
+.btc-info{
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+}
+.wall{
+    padding-top: 5px;
+    font-size: small;
+}
+.ok{
+    padding-top: 10px;
+    margin-left: auto;
+    padding-right: 10px;
+}
+hr{
+    margin: 0;
+	padding: 0;
+	height: 0;
+	border: none;
+	border-top: 0.1px solid black;
+}
+.add{
+    font-weight: bold;
+    font-size: small;
+    padding-top: 15px;
+    text-align: center;
+	align-items: center;
+}
+.fa {
+    font-size: medium;
+}
+</style>
